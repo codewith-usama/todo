@@ -1,5 +1,4 @@
-// ignore_for_file: unnecessary_overrides
-
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/app/data/models/task.dart';
 import 'package:todo_app/app/data/services/storage/storage_repository.dart';
@@ -9,6 +8,8 @@ class HomeController extends GetxController {
   HomeController({required this.storageRepository});
 
   final tasks = <Task>[].obs;
+  final editController = TextEditingController();
+  final formKey = GlobalKey<FormState>();
 
   @override
   void onInit() {
@@ -20,6 +21,6 @@ class HomeController extends GetxController {
   @override
   void onClose() {
     super.onClose();
-    
+    editController.dispose();
   }
 }
