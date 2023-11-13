@@ -10,6 +10,7 @@ class HomeController extends GetxController {
   final tasks = <Task>[].obs;
   final editController = TextEditingController();
   final formKey = GlobalKey<FormState>();
+  final chipIndex = 0.obs;
 
   @override
   void onInit() {
@@ -22,5 +23,15 @@ class HomeController extends GetxController {
   void onClose() {
     super.onClose();
     editController.dispose();
+  }
+
+  void changeChipIndex(int value) {
+    chipIndex.value = value;
+  }
+
+  bool addTask(Task task) {
+    if (tasks.contains(task)) return false;
+    tasks.add(task);
+    return true;
   }
 }

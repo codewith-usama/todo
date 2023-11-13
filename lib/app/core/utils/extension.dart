@@ -16,7 +16,10 @@ extension HexColor on Color {
     if (hexString.length == 6 || hexString.length == 7) {
       buffer.write(hexString.replaceFirst('#', ''));
     }
-    return Color(int.parse(buffer.toString(), radix: 16));
+    return Color(int.parse(
+      buffer.toString(),
+      radix: 16,
+    ));
   }
 
   String toHex({bool leadingHashSign = true}) =>
