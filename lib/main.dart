@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_easyloading/flutter_easyloading.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
 import 'package:todo_app/app/data/services/storage/storage_service.dart';
+import 'package:todo_app/app/module/home/home_binding.dart';
 import 'package:todo_app/app/module/home/home_view.dart';
 
 void main() async {
@@ -15,9 +17,12 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const GetMaterialApp(
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Todo app using GetX',
-      home: HomeView(),
+      home: const HomeView(),
+      initialBinding: HomeBinding(),
+      builder: EasyLoading.init(),
     );
   }
 }
