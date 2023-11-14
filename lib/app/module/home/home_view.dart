@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:todo_app/app/core/utils/extension.dart';
-import 'package:todo_app/app/data/models/task.dart';
 import 'package:todo_app/app/module/home/home_controller.dart';
 import 'package:todo_app/app/module/home/widgets/add_card.dart';
 import 'package:todo_app/app/module/home/widgets/task_card.dart';
